@@ -1,0 +1,64 @@
+<html>
+    <script>
+     
+     function ValidateEmail(inputText)
+{
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.match(mailformat))
+{
+alert("You have entered a valid email address!");    
+
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");   
+
+return false;
+}
+}
+
+    function on()
+    {
+    event.preventDefault();
+    var fname = document.getElementById("fname").value;
+  console.log("first name:" +  fname);
+  var lname = document.getElementById("lname").value;
+  console.log("last name:" + lname);
+  var email =  document.getElementById("email").value;
+  ValidateEmail(email);
+  console.log("email:" + email);
+  displayRadioValue();
+ 
+  
+  
+    }
+    function displayRadioValue() { 
+            var ele = document.getElementsByName('gender'); 
+              
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                console.log("Gender: "+ele[i].value); 
+            } 
+        } 
+    </script>
+    <body>
+        <form onsubmit="on()">
+            First Name : <input type = "text" id = "fname" >
+            Last Name : <input type = "text" id = "lname">
+            Email : <input type = "type"  id = "email"><br>
+            Gender: 
+          <input type="radio" name="gender" value="Male">Male 
+          <input type="radio" name="gender" value="Female">Female 
+          <input type="radio" name="gender" value="Others">Others 
+            
+          <br> 
+            
+    <input type="submit" value="Submit"><br>
+            
+          </form> 
+          
+            
+          
+    </body>
+</html>
