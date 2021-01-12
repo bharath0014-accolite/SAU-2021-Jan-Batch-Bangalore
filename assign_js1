@@ -1,0 +1,62 @@
+function question1(num) {
+    function is_prime(num) {
+      for (let i = 2; i <= Math.sqrt(num); i++)
+      {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+    const result = [];
+    for (let i = 2; i <= num; i++)
+    {
+      while (is_prime(i) && num % i === 0) 
+      {
+        if (!result.includes(i)) result.push(i);
+        num /= i;
+      }
+    }
+    return result;
+  }
+  
+function question2(word)
+{
+    length = word.length;
+    var ans = "";
+    for(let i=0;i<length;i++)
+    {
+        if(word[i]==word[i].toUpperCase())
+            ans = ans + word[i].toLowerCase();
+        else
+            ans = ans + word[i].toUpperCase();
+        
+    }
+    return ans;
+}
+
+
+function question3(num)
+{
+    let x = String(num);
+    for(let i=0;i<x.length-1;i++)
+    {
+        if(x[i]!=x[i+1])
+        {
+            
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function question4(word)
+{
+    let x=0;
+    for(let i=0;i<word.length;i++)
+    {
+        let t = parseInt(word[i]);
+        if(t>=0 && t<=9 )
+            x=x+t;
+    }
+    return x;
+}
